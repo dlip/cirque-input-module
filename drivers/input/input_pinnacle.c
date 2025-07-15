@@ -502,6 +502,7 @@ static int pinnacle_init(const struct device *dev) {
     if (config->rotate_90) {
         feed_cfg2 |= PINNACLE_FEED_CFG2_ROTATE_90;
     }
+    feed_cfg2 |= PINNACLE_FEED_CFG2_DIS_SCRL;
     ret = pinnacle_write(dev, PINNACLE_FEED_CFG2, feed_cfg2);
     if (ret < 0) {
         LOG_ERR("can't write %d", ret);
